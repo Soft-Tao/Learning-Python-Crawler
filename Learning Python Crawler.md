@@ -53,11 +53,11 @@
 
   首先看到id = "bkrw_centent"（**难道不应该是"content"吗**。。。），很明显网页设计者就是想告诉我们我们要爬取的新闻内容应该就在这个`<div>`元素里面，继续
 
-  ![image-20210313194957002](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313194957002.png)
+  ![image-20210313194957002](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313194957002.png?raw=true)
 
   我们发现，`<div id = "brew_centent">`的子元素`<div id = "bkrw_left">`下有一堆`<div>`，用浏览器的开发者工具可以看到这一堆`<div>`中每一个都对应的是一个新闻**（后面我们将会看到，具有同胞关系的元素可以用.xpath在python中取成一个列表）**，打开其中一个，发现他由两个`<p>`元素组成，第一个`<p>`元素里面只有一个`<a>`元素，在开发者工具中可以看到这个元素对应着新闻标题：
 
-  ![image-20210313195655642](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313195655642.png)
+  ![image-20210313195655642](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313195655642.png?raw=true)
 
   它是一个超链接，这也就是为什么它对应的元素是一个`<a>`元素了
 
@@ -97,7 +97,7 @@
 
   接下来我要取标题元素：
 
-  ![image-20210313201810414](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313201810414.png)
+  ![image-20210313201810414](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313201810414.png?raw=true)
 
   它的路径表达式为
 
@@ -111,7 +111,7 @@
 
   另外，补充一个语法：
 
-  ![image-20210313203057623](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313203057623.png)
+  ![image-20210313203057623](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313203057623.png?raw=true)
 
   相当于一个查找功能，当你不想一个一个地写路径表达式的时候经常会用到它，例如
 
@@ -151,11 +151,11 @@
 
   运行结果部分如下：
 
-  ![image-20210313205633917](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313205633917.png)
+  ![image-20210313205633917](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313205633917.png?raw=true)
 
   编码方式为ISO-8859-1
 
-  ![image-20210313205744865](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313205744865.png)
+  ![image-20210313205744865](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313205744865.png?raw=true)
 
   **（出现外星语！）**
 
@@ -225,19 +225,19 @@
 
   既然提到了循环，循环爬取多个网页，**规律**何在呢？也就是说，我们的循环变量`i`在哪里？
 
-  ![image-20210313213609398](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313213609398.png)
+  ![image-20210313213609398](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313213609398.png?raw=true)
 
-  ![image-20210313213620400](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313213620400.png)
+  ![image-20210313213620400](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313213620400.png?raw=true)
 
   这是**第一页的网址**
 
   在跳转到第二页，**第二页的网址为**
 
-  ![image-20210313213729296](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313213729296.png)
+  ![image-20210313213729296](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313213729296.png?raw=true)
 
   **第578页的网址为**
 
-  ![image-20210313213820487](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313213820487.png)
+  ![image-20210313213820487](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313213820487.png?raw=true)
 
   所以，除了第一页比较特殊，其余的页面网址都有共同的部分和递变规律：
 
@@ -266,7 +266,7 @@
 
   之前提到过，为同胞关系的元素可以当作类似列表来处理，在一个页面内，有十五个新闻，它们一定是同胞关系<u>（希望如此）</u>，打开开发者工具查看一下，发现确实如此
 
-  ![image-20210313214848387](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313214848387.png)
+  ![image-20210313214848387](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313214848387.png?raw=true)
 
   它们同是元素`<div class = "bkrw_left">`的子元素，而`<div class = "bkrw_left">`又在元素`<div id = "bkrw_centent">`之下，这时候可以运用`//*`的查找功能，而不用去管元素`<div id = "bkrw_centent">`众多先辈
 
@@ -281,7 +281,7 @@
 
   接下来，需要知道标题，内容简介，时间的具体位置，利用开发者工具：
 
-  ![image-20210313220304041](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313220304041.png)
+  ![image-20210313220304041](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313220304041.png?raw=true)
 
   可以看到，第i个标题是上述`li_list`里面的第i个元素的第一个`<p>`中的`<a>`中的文字部分，
 
