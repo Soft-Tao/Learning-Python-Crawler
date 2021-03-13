@@ -49,7 +49,7 @@
 
   阅读下面一段
 
-  ![image-20210313194403578](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313194403578.png)
+  ![image-20210313194403578](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313194403578.png)
 
   首先看到id = "bkrw_centent"（**难道不应该是"content"吗**。。。），很明显网页设计者就是想告诉我们我们要爬取的新闻内容应该就在这个`<div>`元素里面，继续
 
