@@ -39,7 +39,7 @@
 
   `<a>`元素表示超链接：
 
-  ![image-20210313193741554](/Users/xuxutao/Library/Application Support/typora-user-images/image-20210313193741554.png)
+  ![image-20210313193741554](https://github.com/Soft-Tao/Learning-Python-Crawler/blob/main/Photos%20in%20Learning%20Python%20Craawler/image-20210313193741554.png?raw=true)
 
   这里写在`<>`之内的内容，成为元素`<a>`的**属性**，例如href
 
